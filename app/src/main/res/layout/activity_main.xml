@@ -5,11 +5,11 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:orientation="vertical"
-    tools:context=".MainActivity">
+    tools:context=".Activity.MainActivity">
 
 
     <com.google.android.material.textfield.TextInputLayout
-        android:layout_marginTop="10dp"
+        android:layout_marginTop="25dp"
         android:layout_marginLeft="40dp"
         android:layout_marginRight="40dp"
         style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
@@ -37,6 +37,10 @@
             android:layout_height="wrap_content"/>
     </com.google.android.material.textfield.TextInputLayout>
 
+<androidx.recyclerview.widget.RecyclerView
+    android:id="@+id/recConfig"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"/>
 
 
 
