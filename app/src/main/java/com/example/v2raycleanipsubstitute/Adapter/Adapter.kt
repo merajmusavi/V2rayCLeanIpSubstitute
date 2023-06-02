@@ -23,6 +23,5 @@ class Adapter(val con: Context, val configLi: MutableList<ConfigModel>) :
     }
 
     override fun onBindViewHolder(holder: ViewHolder, position: Int) {
-        TODO("Not yet implemented")
     }
 }

@@ -15,16 +15,16 @@
         android:layout_height="wrap_content">
 
         <TextView
-            android:layout_marginStart="5dp"
-            android:maxLines="1"
-            android:text="vmess://fdsfsdgfdsgfdsagdgfadsfgafdsgadfg"
+            android:id="@+id/tvConfigPlace"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
             android:layout_alignParentStart="true"
             android:layout_centerInParent="true"
-            android:id="@+id/tvConfigPlace"
-            android:maxLength="35"
-            android:layout_width="wrap_content"
-            android:textColor="@color/black"
-            android:layout_height="wrap_content"/>
+            android:layout_marginStart="5dp"
+            android:maxLength="15"
+            android:maxLines="1"
+            android:text="vmess://fdsfsdgfdsgfdsagdgfadsfgafdsgadfg"
+            android:textColor="@color/black" />
 
 
         <LinearLayout
