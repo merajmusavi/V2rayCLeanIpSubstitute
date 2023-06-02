@@ -65,7 +65,7 @@
             </androidx.cardview.widget.CardView>
 
             <androidx.cardview.widget.CardView
-                android:layout_marginStart="5dp"
+                android:layout_marginStart="10dp"
                 android:backgroundTint="#B00000"
                 app:cardCornerRadius="2dp"
                 android:layout_width="wrap_content"
