@@ -2,6 +2,7 @@ package com.example.v2raycleanipsubstitute.Activity
 
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
+import android.widget.Toast
 import androidx.recyclerview.widget.LinearLayoutManager
 import com.example.v2raycleanipsubstitute.Adapter.Adapter
 import com.example.v2raycleanipsubstitute.DataModel.ConfigModel
@@ -22,5 +23,22 @@ class MainActivity : AppCompatActivity() {
 
 
 
+
+
+
+            binding.convert.setOnClickListener {
+                val config = binding.configPlace.text.toString()
+                val ip = binding.ipPLace.text.toString()
+                val splitData = ip.split("/").toTypedArray()
+
+                for (i in splitData.indices){
+                    Toast.makeText(this,splitData[i],Toast.LENGTH_SHORT).show()
+                }
+            }
+        }
+
+
+
+
+
     }
-}

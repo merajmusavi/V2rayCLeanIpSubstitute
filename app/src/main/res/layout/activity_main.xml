@@ -13,11 +13,11 @@
         android:layout_marginLeft="40dp"
         android:layout_marginRight="40dp"
         style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
-        android:hint="title"
+        android:hint="import config"
         android:layout_width="match_parent"
         android:layout_height="wrap_content">
         <com.google.android.material.textfield.TextInputEditText
-            android:id="@+id/title"
+            android:id="@+id/configPlace"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"/>
     </com.google.android.material.textfield.TextInputLayout>
@@ -27,17 +27,18 @@
         android:layout_marginLeft="40dp"
         android:layout_marginRight="40dp"
         style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
-        android:hint="description"
+        android:hint="list of ip"
         android:layout_width="match_parent"
         android:layout_height="wrap_content">
         <com.google.android.material.textfield.TextInputEditText
-            android:id="@+id/desc"
+            android:id="@+id/ipPLace"
             android:layout_marginBottom="15dp"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"/>
     </com.google.android.material.textfield.TextInputLayout>
 
     <com.google.android.material.button.MaterialButton
+        android:id="@+id/convert"
         android:layout_marginEnd="40dp"
         android:layout_marginStart="40dp"
         android:backgroundTint="#00BCD4"
