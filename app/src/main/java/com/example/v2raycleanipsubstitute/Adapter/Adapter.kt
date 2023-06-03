@@ -19,9 +19,10 @@ class Adapter(val con: Context, val configLi: MutableList<ConfigModel>) :
     }
 
     override fun getItemCount(): Int {
-        return 20
+        return configLi.size
     }
 
     override fun onBindViewHolder(holder: ViewHolder, position: Int) {
+        holder.item.tvConfigPlace.text = configLi[position].config
     }
 }

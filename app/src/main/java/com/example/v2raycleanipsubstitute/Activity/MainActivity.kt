@@ -12,14 +12,16 @@ class MainActivity : AppCompatActivity() {
     lateinit var binding:ActivityMainBinding
     lateinit var adapter:Adapter
 
+
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         binding = ActivityMainBinding.inflate(layoutInflater)
         setContentView(binding.root)
         val list = mutableListOf <ConfigModel>()
-        adapter = Adapter(this,list)
-        binding.recConfig.layoutManager = LinearLayoutManager(this)
-        binding.recConfig.adapter = adapter
+
+
+
+
 
 
 
@@ -27,15 +29,23 @@ class MainActivity : AppCompatActivity() {
 
 
             binding.convert.setOnClickListener {
+                list.clear()
                 val config = binding.configPlace.text.toString()
                 val ip = binding.ipPLace.text.toString()
                 val splitData = ip.split("/").toTypedArray()
 
                 for (i in splitData.indices){
-                    Toast.makeText(this,splitData[i],Toast.LENGTH_SHORT).show()
+
+                    val model = ConfigModel(splitData[i])
+                    list.add(model)
                 }
             }
-        }
+        adapter = Adapter(this,list)
+        binding.recConfig.layoutManager = LinearLayoutManager(this)
+        binding.recConfig.adapter = adapter
+        adapter.notifyDataSetChanged()
+
+    }
 
 
 
