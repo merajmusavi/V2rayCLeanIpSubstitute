@@ -1,5 +1,8 @@
 package com.example.v2raycleanipsubstitute.Activity
 
+import android.content.ClipData
+import android.content.ClipboardManager
+import android.content.Context
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.widget.Toast
@@ -11,13 +14,14 @@ import com.example.v2raycleanipsubstitute.databinding.ActivityMainBinding
 class MainActivity : AppCompatActivity(),Adapter.HandleClicks {
     lateinit var binding:ActivityMainBinding
     lateinit var adapter:Adapter
+    lateinit var list:MutableList<ConfigModel>
 
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         binding = ActivityMainBinding.inflate(layoutInflater)
         setContentView(binding.root)
-        val list = mutableListOf <ConfigModel>()
+         list = mutableListOf <ConfigModel>()
 
 
             binding.convert.setOnClickListener {
@@ -45,7 +49,11 @@ class MainActivity : AppCompatActivity(),Adapter.HandleClicks {
     }
 
     override fun onCopyClicked(position: Int) {
-
+        val item = list[position]
+        val clipBoard = getSystemService(Context.CLIPBOARD_SERVICE) as ClipboardManager
+        val clipData = ClipData.newPlainText("dataLabel",item.config)
+        clipBoard.setPrimaryClip(clipData)
+        Toast.makeText(this,"config copied successfully",Toast.LENGTH_SHORT).show()
     }
 
 
