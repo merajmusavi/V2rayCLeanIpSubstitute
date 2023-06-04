@@ -8,7 +8,7 @@ import com.example.v2raycleanipsubstitute.Adapter.Adapter
 import com.example.v2raycleanipsubstitute.DataModel.ConfigModel
 import com.example.v2raycleanipsubstitute.databinding.ActivityMainBinding
 
-class MainActivity : AppCompatActivity() {
+class MainActivity : AppCompatActivity(),Adapter.HandleClicks {
     lateinit var binding:ActivityMainBinding
     lateinit var adapter:Adapter
 
@@ -39,12 +39,14 @@ class MainActivity : AppCompatActivity() {
         adapter = Adapter(this,list)
         binding.recConfig.layoutManager = LinearLayoutManager(this)
         binding.recConfig.adapter = adapter
+        adapter.setListener(this)
         adapter.notifyDataSetChanged()
 
     }
 
-
-
-
+    override fun onCopyClicked(position: Int) {
 
     }
+
+
+}

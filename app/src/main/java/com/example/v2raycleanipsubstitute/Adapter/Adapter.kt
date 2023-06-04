@@ -10,7 +10,19 @@ import com.example.v2raycleanipsubstitute.databinding.ItemBinding
 class Adapter(val con: Context, val configLi: MutableList<ConfigModel>) :
     RecyclerView.Adapter<Adapter.ViewHolder>() {
 
+    private var onButtonCLicked:HandleClicks? = null
+
+    fun setListener(listener:HandleClicks){
+        onButtonCLicked = listener
+    }
     inner class ViewHolder(val item: ItemBinding) : RecyclerView.ViewHolder(item.root) {
+
+        init {
+            item.textViewCopy.setOnClickListener {
+                val position = adapterPosition
+                onButtonCLicked?.onCopyClicked(position)
+            }
+        }
 
     }
 
@@ -24,5 +36,8 @@ class Adapter(val con: Context, val configLi: MutableList<ConfigModel>) :
 
     override fun onBindViewHolder(holder: ViewHolder, position: Int) {
         holder.item.tvConfigPlace.text = configLi[position].config
+    }
+    interface HandleClicks{
+        fun onCopyClicked(position:Int)
     }
 }
