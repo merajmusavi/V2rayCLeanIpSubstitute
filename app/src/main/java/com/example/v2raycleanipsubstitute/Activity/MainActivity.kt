@@ -20,23 +20,19 @@ class MainActivity : AppCompatActivity() {
         val list = mutableListOf <ConfigModel>()
 
 
-
-
-
-
-
-
-
-
             binding.convert.setOnClickListener {
                 list.clear()
                 val config = binding.configPlace.text.toString()
                 val ip = binding.ipPLace.text.toString()
                 val splitData = ip.split("/").toTypedArray()
 
-                for (i in splitData.indices){
 
-                    val model = ConfigModel(splitData[i])
+
+
+
+                for (i in splitData.indices){
+                    val newConfig = config.replace(Regex("(?<=@).*?(?=:|$)"),splitData[i])
+                    val model = ConfigModel(newConfig)
                     list.add(model)
                 }
             }
